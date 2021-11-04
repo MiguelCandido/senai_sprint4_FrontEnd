@@ -11,7 +11,7 @@ class Clock extends React.Component {
     super(props);
     this.state = {
       date : new Date(),
-      pausado : false
+      pausado : 0
     }
   }
 
@@ -41,18 +41,18 @@ class Clock extends React.Component {
   pause(){
     clearInterval(this.timerID);
     this.setState({
-      pausado : true
+      pausado : 1
     })
     return console.log('Relógio '+this.timerID+" pausado")
   }
 
   unpause(){
-  this.timeID = setInterval(() => {
+  this.timerID = setInterval(() => {
     this.thick()
   }, 1000)
 
   this.setState({
-    pausado : false
+    pausado : 0
   })
   return console.log('Relógio '+this.timerID+" despausado")
   }
@@ -65,7 +65,7 @@ class Clock extends React.Component {
         <h1>Relógio</h1>
         <DataFormatada date={this.state.date} />
         {
-        this.state.pausado === true ?
+        this.state.pausado === 1 ?
         <button type="submit" onClick={() => this.unpause()}>Despausar</button>:
         <button type="submit"onClick={() => this.pause()}>Pausar</button>
           
@@ -82,9 +82,8 @@ function App() {
     // JSX
     <div className="App">
       <header className="App-header">
-        {/* Faz a chamada de dois componentes Clock */}
         <Clock />
-        <Clock />
+
       </header>
     </div>
   );
