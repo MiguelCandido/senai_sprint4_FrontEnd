@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+.botão{
+  height: 25px;
+  font-weight: 600;
+  color: white;
+  border-width: 0ch;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+#Despausar{
+  background-color: green;
+}
+
+#Pausar{
+  background-color: red;
+}

@@ -66,8 +66,8 @@ class Clock extends React.Component {
         <DataFormatada date={this.state.date} />
         {
         this.state.pausado === 1 ?
-        <button type="submit" onClick={() => this.unpause()}>Despausar</button>:
-        <button type="submit"onClick={() => this.pause()}>Pausar</button>
+        <button type="submit" className = "botão" id = "Despausar" onClick={() => this.unpause()}>Despausar</button>:
+        <button type="submit" className = "botão" id = "Pausar" onClick={() => this.pause()}>Pausar</button>
           
         }
       
